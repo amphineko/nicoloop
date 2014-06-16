@@ -4,16 +4,19 @@
 
 <html>
 	<head>
+		<title>~/nicoloop @ futa.Pw</title>
 		<meta charset="utf-8" />
 		
 		<link href="nicoplayer.css" rel="stylesheet" />
 	</head>
 	
 	<body>
-		<video id="nicoplayer" src="loop.mp4" autoplay="true">
+		<video id="nicoplayer" autoplay="true">
 			Sorry, but your browser doesn't support the features that this page required.<br />
 			对不起, 但是您的浏览器不支持显示这个页面所必须的功能.<br />
 			對不起, 但是您的瀏覽器不支援顯示這個網頁所必須的功能
+			<source src="loop.mp4" type="video/mp4">
+			<source src="loop.ogg" type="video/ogg">
 		</video>
 		
 		<div id="controller">
@@ -22,17 +25,34 @@
 			<a href="#" id="repeat" class="unchecked">循环播放!</a>
 		</div>
 		
+		<div id="online">
+			<span id="online-counter">Loading...</span>
+		</div>
+		
 		<div id="about">
 			Designed by <a href="http://weibo.com/uncookie">@理子饼干</a> with HTML5, 使用了 <a href="http://weibo.com/lizeqiangd">@Lizeqiangd</a> 的视频<br />
-			Hosting by <a href="http://hellomawing.tk/">MAtek Content Distribution Network (mawing CDN)</a>
+			Hosting by <a href="#">MAtek Content Distribution Network (mawing CDN)</a><br />
+			如果遇到不兼容无法播放的情况, 请向 <a href="http://weibo.com/uncookie">@理子饼干</a> 反馈
+		</div>
+		
+		<div id="first-time">
+			
 		</div>
 		
 		<a href="https://github.com/amphineko/nicoloop"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
 		
 		<script src="jquery-2.1.1.js"></script>
+		<script src="jquery-ui-1.10.4.custom.min.js"></script>
 		<script src="jquery.cookie.js"></script>
-		<script src="nicoplayer.js"></script>
 		
-		<script type="text/javascript" src="http://js.tongji.linezing.com/3479399/tongji.js"></script><noscript>
+		<script src="http://epsilon.futa.pw:1394/socket.io/socket.io.js"></script>
+		
+		<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=1818220002" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="nicoplayer.js"></script>
+		<script src="client.js"></script>
+		
+		<script type="text/javascript" src="http://js.tongji.linezing.com/3479399/tongji.js"></script>
+		<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"#NicoLoop# 大家一起来Niconiconi~ http://nico.futa.pw/","bdMini":"1","bdMiniList":false,"bdPic":"http://ww2.sinaimg.cn/large/9bc136a2jw1ehen7a8z3mj21kw0wojwf.jpg","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"1","bdPos":"left","bdTop":"100"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 	</body>
 </html>

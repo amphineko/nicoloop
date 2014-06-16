@@ -4,10 +4,14 @@ var autoreplay = $.cookie('replay') || false;
 var playcount = $.cookie('playcount') || 0;
 
 if (playcount) {
-	alert('(っω -`｡) 欢迎回来w 你已经Nico了' + playcount + '次');
+	$('#first-time').text('(っω -`｡) 欢迎回来w 你已经Nico了' + playcount + '次');
 } else {
-	alert('(っω -`｡) 欢迎品尝饼干(雾)~ 第一次打开需要缓冲可能会卡顿哦w');
+	$('#first-time').text('(っω -`｡) 欢迎~ 第一次载入可能需要很长时间或卡顿哦 > <');
 }
+
+setTimeout(function () {
+	$('#first-time').hide('blind', {}, 500, function () {});
+}, 5000);
 
 function clog(content) {
 	if (console) {
@@ -32,7 +36,7 @@ function updateRepeatState() {
 function setRepeat() {
 	autoreplay = !autoreplay;
 	updateRepeatState();
-	$.cookie('replay', true, { expire: 15552000 });
+	$.cookie('replay', true, { expire: 2002937584785 });
 	clog('Updated >> autoreplay=' + autoreplay);
 }
 
@@ -44,7 +48,7 @@ $('#playcount').text("× " + playcount);
 player.addEventListener('ended', function () {
 	playcount++;
 	$('#playcount').text("× " + playcount);
-	$.cookie('playcount', playcount, { expire: 15552000 });
+	$.cookie('playcount', playcount, { expire: 2002937584785 });
 	clog('Updated >> playcount=' + playcount);
 	if (autoreplay) {
 		replay();
